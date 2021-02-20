@@ -1,0 +1,100 @@
+<div class="super_container">
+    <!-- Header -->
+    
+        <header class="header" *ngIf="nav.visible">
+    
+            <!-- Top Bar -->
+            <div class="top_bar">
+                <div class="top_bar_container">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <div class="top_bar_content d-flex flex-row align-items-center justify-content-start">
+                                    <ul class="top_bar_contact_list">
+                                        <li><div class="question">Vous avez des questions?</div></li>
+                                        <li>
+                                            <i class="fa fa-phone" aria-hidden="true"></i>
+                                            <div>+21623255036</div>
+                                        </li>
+                                        <li>
+    
+                                            <div>mariemhajjem@gmail.com</div>
+                                        </li>
+                                    </ul>
+    
+                                    <div class="top_bar_login ml-auto" *ngIf="!nav.LoggedIn">
+                                            <div class="login_button" ><a routerLink="/auth/login">Se connecter</a> </div>
+                                        </div>
+                                    <div class="top_bar_login ml-auto" *ngIf="nav.isAdmin; else notShow">
+                                            <div class="login_button"><a routerLink="/admin">AdminPanel</a></div>
+                                        </div>
+                                        <ng-template #notShow>
+                                              <div class="top_bar_login ml-auto" *ngIf="nav.LoggedIn">
+                                                <div class="login_button"><a (click)="logout()">Se déconnecter</a></div>
+                                            </div>
+                                        </ng-template>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Header Content -->
+            <div class="header_container">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="header_content d-flex flex-row align-items-center justify-content-start">
+                                <div class="logo_container">
+                                    <a href="/">
+                                        <div class="logo_text">Club<span>Robotique</span></div>
+                                    </a>
+                                </div>
+                                <nav class="main_nav_contaner ml-auto">
+                                    <ul class="main_nav">
+                                        <li ><a routerLink="/">Accueil</a></li>
+                                        <li ><a routerLink="/list">Formations</a></li> 
+                                        <li><a routerLink="/about">Qui sommes-nous?</a></li>
+                                        <li><a routerLink="/contact">Contact</a></li>
+                                    </ul>
+    
+    
+                                    <!-- Hamburger --> 
+     
+                    <div class="shopping_cart" *ngIf="nav.LoggedIn && !nav.isAdmin"><i class="pi pi-user" routerLink="/espacePersonnel"></i></div>
+                                    <div class="hamburger menu_mm">
+                                        <i class="fa fa-bars menu_mm" aria-hidden="true"></i>
+                                    </div>
+                                </nav>
+    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+    
+        </header>
+    
+        <!-- Menu -->
+    
+        <div class="menu d-flex flex-column align-items-end justify-content-start text-right menu_mm trans_400">
+            <div class="menu_close_container"><div class="menu_close"><div></div><div></div></div></div>
+    
+            <nav class="menu_nav">
+    
+                    <ul class="menu_mm">
+                        <li class="menu_mm"><a routerLink="/">Accueil</a></li>
+                        <li  class="menu_mm"><a routerLink="/list">Formations</a></li> 
+                        <li  class="menu_mm"><a routerLink="/about">Qui sommes-nous?</a></li>
+                        <li  class="menu_mm"><a routerLink="/contact">Contact</a></li>
+                    </ul>
+    
+            </nav>
+      </div>
+    
+      <router-outlet></router-outlet>
+    
+    </div>
+    
