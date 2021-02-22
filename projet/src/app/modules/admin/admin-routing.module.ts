@@ -1,15 +1,10 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common'; 
-import { EditFormationComponent } from './components/edit-formation/edit-formation.component';
-import { NavbarComponent } from './components/navbar/navbar.component'; 
-import { Routes, RouterModule } from '@angular/router'; 
-import { CrudComponent } from './components/crud/crud.component';
-import { FormListComponent } from './components/form-list/form-list.component';
+import { CommonModule } from '@angular/common';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { CrudUsersComponent } from './components/crud-users/crud-users.component';
-import { AuthGuard } from 'src/app/auth.guard'; 
-import { MessagesComponent } from './components/messages/messages.component'; 
-import { CrudPartenairesComponent } from './components/crud-partenaires/crud-partenaires.component';
+import { AuthGuard } from 'src/app/auth.guard';
 import { ListUsersComponent } from './components/list-users/list-users.component';
 
 
@@ -26,22 +21,17 @@ const routes: Routes = [
     {
       path: 'home',
       component: HomeComponent
-    }, 
-    { path: 'addFormation', component: CrudComponent }, 
+    },
     { path: 'users', component: ListUsersComponent },
     { path: 'editUser/:id', component: CrudUsersComponent },
-    { path: 'listFormation', component: FormListComponent },
-    { path: 'listPartenaires', component: CrudPartenairesComponent }, 
-    {path: 'editFormation/:id', component: EditFormationComponent}, 
-    { path : 'messages',component: MessagesComponent}
-  ]
+   ]
   }
 ];
 
 
 @NgModule({
   declarations: [],
-  
+
   imports: [
     RouterModule.forChild(routes) ,
     CommonModule

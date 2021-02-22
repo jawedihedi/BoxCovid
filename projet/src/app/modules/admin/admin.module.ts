@@ -1,12 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { EditFormationComponent } from './components/edit-formation/edit-formation.component';
-import { FormListComponent } from './components/form-list/form-list.component';
-import { CrudComponent } from './components/crud/crud.component';
-import { MessagesComponent } from './components/messages/messages.component';
 import { CrudUsersComponent } from './components/crud-users/crud-users.component';
 import { ListUsersComponent } from './components/list-users/list-users.component';
-import { CrudPartenairesComponent } from './components/crud-partenaires/crud-partenaires.component';
 import {RadioButtonModule} from 'primeng/radiobutton';
 import { AdminRoutingModule } from './admin-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -32,7 +27,6 @@ import {CalendarModule} from 'primeng/calendar';
 import {ListboxModule} from 'primeng/listbox';
 import {ToggleButtonModule} from 'primeng/togglebutton';
 import {ChartModule} from 'primeng/chart';
-import { FormationService } from './services/formation.service';
 import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 
@@ -47,7 +41,7 @@ const JWT_Module_Options: JwtModuleOptions = {
 
 
 @NgModule({
-  declarations: [EditFormationComponent, FormListComponent, CrudComponent, MessagesComponent, CrudUsersComponent, ListUsersComponent, CrudPartenairesComponent, HomeComponent, NavbarComponent],
+  declarations: [CrudUsersComponent, ListUsersComponent, HomeComponent, NavbarComponent],
   imports: [
     CommonModule,
     BrowserAnimationsModule,
@@ -75,7 +69,6 @@ const JWT_Module_Options: JwtModuleOptions = {
     JwtModule.forRoot(JWT_Module_Options)
   ],
     providers: [
-    FormationService,
     UserService,
     ConfirmationService,
     AuthGuard
