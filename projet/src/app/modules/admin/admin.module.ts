@@ -29,6 +29,7 @@ import {ToggleButtonModule} from 'primeng/togglebutton';
 import {ChartModule} from 'primeng/chart';
 import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { RegistreMedComponent } from './components/registre-med/registre-med.component';
 
 export function getToken() {
   return localStorage.getItem('token');
@@ -41,7 +42,7 @@ const JWT_Module_Options: JwtModuleOptions = {
 
 
 @NgModule({
-  declarations: [CrudUsersComponent, ListUsersComponent, HomeComponent, NavbarComponent],
+  declarations: [CrudUsersComponent, ListUsersComponent, HomeComponent, NavbarComponent, RegistreMedComponent],
   imports: [
     CommonModule,
     BrowserAnimationsModule,

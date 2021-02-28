@@ -1,3 +1,4 @@
+import { RegistreMedComponent } from './components/registre-med/registre-med.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -21,6 +22,9 @@ const routes: Routes = [
     {
       path: 'home',
       component: HomeComponent
+    },
+    { path: 'med/ajout',
+      component: RegistreMedComponent
     },
     { path: 'users', component: ListUsersComponent },
     { path: 'editUser/:id', component: CrudUsersComponent },
