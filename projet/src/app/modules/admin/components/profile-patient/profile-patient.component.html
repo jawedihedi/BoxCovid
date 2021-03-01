@@ -1,19 +1,20 @@
 <br>
-<div class="col-lg-8">
+<div class="container mt-5 mb-5 mr-10 mg-10">
   <div class="card card-small mb-4">
     <div class="card-header border-bottom">
-      <h6 class="m-0">etat patient</h6>
+      <h4 class="m-0">Etat</h4>
     </div>
-    <button class="btn btn-sm btn-primary" >demande nouveau etat</button>
-
-  <div class="table-responsive">
+    <br>
+    <button class="btn btn-sm btn-primary" >Consulter à nouveau l'état du patient</button>
+    <br>
+  <div class="table-responsive" style="margin: 0 auto;">
     <table class="table table-bordered">
-      <thead>
+      <thead class="thead-dark">
         <tr>
-          <th scope="col">date</th>
-          <th scope="col">temprature</th>
+          <th scope="col">Date</th>
+          <th scope="col">Température</th>
           <th scope="col">SPo2</th>
-          <th scope="col">bpm</th>
+          <th scope="col">Bpm</th>
 
           <th class="text-center" scope="col">Action</th>
         </tr>
@@ -26,7 +27,7 @@
           <td>{{etat.bpm}}</td>
           <td class="text-center">
             <button class="btn btn-sm btn-primary" routerLink="/admin/patient/ajoutOrdo/{{etat.Patient}}">Ajouter Ordonnance</button>
-            <button class="btn btn-sm btn-primary" routerLink="/admin/patient/ajoutRap/{{etat.Patient}}">Ajouter rapport</button>
+            <button class="btn btn-sm btn-primary" routerLink="/admin/patient/ajoutRap/{{etat.Patient}}">Ajouter Rapport</button>
         </tr>
       </tbody>
     </table>
