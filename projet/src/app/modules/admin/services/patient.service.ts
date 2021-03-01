@@ -9,13 +9,15 @@ import { catchError, map } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class MedecinService {
-  private REST_API="http://localhost:3000/api/auth";
+export class PatientService {
+  private REST_API="http://localhost:3000/users";
+  private API="http://localhost:3000/etatPatient";
+
   httpHeaders = new HttpHeaders().set('Content-Type', 'application/json');
   constructor(private http: HttpClient, private router: Router, private jwtHelperService: JwtHelperService) {}
 
-  registreMes(data: User): Observable<any> {
-    let API_URL = `${this.REST_API}/register`;
+  registrePatient(data: User): Observable<any> {
+    let API_URL = `${this.REST_API}/ajout`;
     return this.http.post(API_URL, data)
       .pipe(
         catchError(this.handleError)
@@ -34,4 +36,28 @@ export class MedecinService {
     console.log(errorMessage);
     return throwError(errorMessage);
   }
+  GetPatients() {
+    return this.http.get(`${this.REST_API}/Patients`);
   }
+
+  getpatient(id:any): Observable<any> {
+    let API_URL = `${this.REST_API}/${id}`;
+    return this.http.get(API_URL, { headers: this.httpHeaders })
+      .pipe(map((res: any) => {
+          return res || {}
+        }),
+        catchError(this.handleError)
+      )
+  }
+  getEtatPatient(id:any): Observable<any> {
+    let API_URL = `${this.API}/etatPatient/${id}`;
+    return this.http.get(API_URL, { headers: this.httpHeaders })
+      .pipe(map((res: any) => {
+          return res || {}
+        }),
+        catchError(this.handleError)
+      )
+  }
+}
+
+

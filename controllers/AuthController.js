@@ -26,12 +26,7 @@ router.post('/register', function(req, res) {
     },
     function (err, user) {
       if (err) return res.status(500).send("There was a problem registering the user.")
-     
-      let payload = { id: user._id , role:user.role, email : user.email}
-      var token = jwt.sign(payload, 'secret', {
-        expiresIn: 86400 
-      });
-      res.status(200).send({token:token});
+      res.status(200).send(user);
     });
   });
 

@@ -56,6 +56,9 @@
                                         <li ><a routerLink="/">Accueil</a></li>
                                         <li><a routerLink="/about">Qui sommes-nous?</a></li>
                                         <li><a routerLink="/contact">Contact</a></li>
+                                        <li *ngIf="nav.LoggedIn && !nav.isAdmin"><a routerLink="/etat">Mon etat</a></li>
+                                        <li *ngIf="nav.LoggedIn && !nav.isAdmin"><a routerLink="/contact">Ordonnance</a></li>
+
                                     </ul>
 
 
@@ -86,6 +89,9 @@
                         <li class="menu_mm"><a routerLink="/">Accueil</a></li>
                         <li  class="menu_mm"><a routerLink="/about">Qui sommes-nous?</a></li>
                         <li  class="menu_mm"><a routerLink="/contact">Contact</a></li>
+                        <li class="menu_mm"  *ngIf="nav.LoggedIn && !nav.isAdmin"><a routerLink="/etat">Mon etat</a></li>
+                        <li class="menu_mm" *ngIf="nav.LoggedIn && !nav.isAdmin"><a routerLink="/ordonnace">Ordonnance</a></li>
+
                     </ul>
 
             </nav>

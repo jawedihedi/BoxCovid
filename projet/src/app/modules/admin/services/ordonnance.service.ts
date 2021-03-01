@@ -1,4 +1,4 @@
-import { User } from './../models/user';
+import { Ordonnance } from './../models/ordonnance';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
@@ -6,22 +6,20 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 import { Observable, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 
+
 @Injectable({
   providedIn: 'root'
 })
-export class MedecinService {
-  private REST_API="http://localhost:3000/api/auth";
-  httpHeaders = new HttpHeaders().set('Content-Type', 'application/json');
-  constructor(private http: HttpClient, private router: Router, private jwtHelperService: JwtHelperService) {}
-
-  registreMes(data: User): Observable<any> {
-    let API_URL = `${this.REST_API}/register`;
+export class OrdonnanceService {
+  private REST_API="http://localhost:3000/Ordo";
+  constructor(private http: HttpClient, private router: Router, private jwtHelperService: JwtHelperService) { }
+  ajoutordonnance(data: Ordonnance, id ): Observable<any> {
+    let API_URL = `${this.REST_API}/create/${id}`;
     return this.http.post(API_URL, data)
       .pipe(
         catchError(this.handleError)
       )
   }
-
   handleError(error: HttpErrorResponse) {
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {
@@ -34,4 +32,4 @@ export class MedecinService {
     console.log(errorMessage);
     return throwError(errorMessage);
   }
-  }
+}

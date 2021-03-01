@@ -1,3 +1,5 @@
+import { OrdonnanceComponent } from './ordonnance/ordonnance.component';
+import { EtatComponent } from './etat/etat.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -16,6 +18,12 @@ const routes: Routes = [
       { path :'home' , component : HomeComponent},
       { path: 'espacePersonnel',
            component: ProfilComponent
+      } ,
+      { path: 'etat',
+      component: EtatComponent
+      } ,
+      { path: 'ordonnance',
+      component: OrdonnanceComponent
       } ,
       {
         path: 'about',

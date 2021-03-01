@@ -19,7 +19,7 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {
     this.createForm();
   }
-  
+
   createForm() {
     this.angForm = this.fb.group({
       email: ['', [Validators.required , Validators.email]],
@@ -28,28 +28,28 @@ export class RegisterComponent implements OnInit {
   }
   get f() { return this.angForm.controls; }
 
-   
-      
+
+
   submit(email :string,password:string) {
     this.submitted = true;
     if(this.angForm.controls['email'].invalid && this.angForm.controls['password'].invalid){
       this.messageService.add({severity: 'error', summary: 'Erreur', detail: "L'email ou le mot de passe entré est invalide"});
       return;
     }
-    else if (this.angForm.controls['email'].invalid) { 
+    else if (this.angForm.controls['email'].invalid) {
        this.messageService.add({severity: 'error', summary: 'Erreur', detail: "L'email entré est invalide"});
       return;
-     } 
-     else if(this.angForm.controls['password'].invalid){ 
+     }
+     else if(this.angForm.controls['password'].invalid){
       this.messageService.add({severity: 'error', summary: 'Erreur', detail: "Le mot de passe entré est invalide"});return;
     };
-    
+
     let registerUserData :User = {
     email: email,
     password: password,
     role : 'User',
     nom: '',
-    prenom: '', 
+    prenom: '',
     tel: 0,
     age: 0,
     Niveau : '',

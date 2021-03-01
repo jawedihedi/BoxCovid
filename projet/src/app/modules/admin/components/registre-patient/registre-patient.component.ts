@@ -1,21 +1,21 @@
-import { MedecinService } from './../../services/medecin.service';
+import { PatientService } from './../../services/patient.service';
 import { Component, OnInit, NgZone } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormBuilder } from "@angular/forms";
 
 @Component({
-  selector: 'app-registre-med',
-  templateUrl: './registre-med.component.html',
-  styleUrls: ['./registre-med.component.css']
+  selector: 'app-registre-patient',
+  templateUrl: './registre-patient.component.html',
+  styleUrls: ['./registre-patient.component.css']
 })
-export class RegistreMedComponent implements OnInit {
+export class RegistrePatientComponent implements OnInit {
 
   userForm: FormGroup;
   constructor(
     public formBuilder: FormBuilder,
     private router: Router,
     private ngZone: NgZone,
-    private medecinService: MedecinService
+    private patientService: PatientService
   ) {
     this.userForm = this.formBuilder.group({
       email: [''],
@@ -26,7 +26,7 @@ export class RegistreMedComponent implements OnInit {
   ngOnInit() { }
 
   onSubmit(): any {
-    this.medecinService.registreMes(this.userForm.value)
+    this.patientService.registrePatient(this.userForm.value)
     .subscribe(() => {
         console.log('Data added successfully!')
         this.ngZone.run(() => this.router.navigateByUrl('/'))

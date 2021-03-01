@@ -12,7 +12,7 @@ router.post('/create/:id', VerifyToken , function (req, res) {
     ordonnance.create({
         Patient : req.params.id,
         Medicin : req.userId,
-        Medicaments : req.body.data
+        Medicaments : req.body.medicament
         },
         function (err, user) {
             if (err) return res.status(500).send("There was a problem adding the information to the database.");
