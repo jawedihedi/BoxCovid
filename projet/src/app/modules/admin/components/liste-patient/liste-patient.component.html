@@ -25,6 +25,7 @@
           <td>{{user.email}}</td>
           <td class="text-center">
             <button class="btn btn-sm btn-primary" routerLink="/admin/patient/etats/{{user._id}}">Consulter son état</button>
+            <button class="btn btn-sm btn-primary" routerLink="/admin/patient/etats/{{user._id}}">Consulter son rapport</button>
             <button class="btn btn-sm btn-danger" (click)="delete(book._id, i)">Supprimer</button>
         </tr>
       </tbody>
