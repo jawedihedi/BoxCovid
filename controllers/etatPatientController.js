@@ -124,7 +124,7 @@ router.route('/add').post(VerifyToken ,function (req, res) {
           //console.log("SPo2 : "+this.Spo2+ "%");
         }
         cpt++;
-        if(cpt == 10000){
+        if(cpt == 500){
         let etatPatient = new EtatPatient ({
           temprature: temp,
           SPo2: Spo2,
@@ -149,4 +149,12 @@ router.get('/etatPatients', VerifyToken , function (req, res) {
       res.status(200).send(users);
   });
 });
+router.get('/etatPatient/:id',  function (req, res) {
+  EtatPatient.find({Patient : req.params.id}, function (err, users) {
+      if (err) return res.status(500).send("There was a problem finding the users.");
+      res.status(200).send(users);
+  });
+});
+
+router
 module.exports = router;

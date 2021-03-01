@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var bodyParser = require('body-parser');
 const VerifyToken = require('./VerifyToken');
+const bcrypt = require('bcryptjs');
 
 router.use(bodyParser.urlencoded({ extended: true }));
 router.use(bodyParser.json());
@@ -9,15 +10,15 @@ var User = require('../Models/User');
 
 
 router.post('/ajout', VerifyToken , function (req, res) {
+    var hashedPassword = bcrypt.hashSync(req.body.password, 8);
     User.create({
-
         email : req.body.email,
         role : "Patient",
+        password : hashedPassword,
         nom: req.body.nom,
         prenom: req.body.prenom,
         tel: req.body.tel,
         age: req.body.age,
-        Niveau : req.body.Niveau,
         Medicin : req.userId
         },
         function (err, user) {

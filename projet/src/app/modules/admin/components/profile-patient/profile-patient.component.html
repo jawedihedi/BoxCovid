@@ -1,0 +1,35 @@
+<br>
+<div class="col-lg-8">
+  <div class="card card-small mb-4">
+    <div class="card-header border-bottom">
+      <h6 class="m-0">etat patient</h6>
+    </div>
+    <button class="btn btn-sm btn-primary" >demande nouveau etat</button>
+
+  <div class="table-responsive">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">date</th>
+          <th scope="col">temprature</th>
+          <th scope="col">SPo2</th>
+          <th scope="col">bpm</th>
+
+          <th class="text-center" scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let etat of Etat; let i = index">
+          <th scope="row">{{etat.date}}</th>
+          <td>{{etat.temprature}}</td>
+          <td>{{etat.SPo2}}</td>
+          <td>{{etat.bpm}}</td>
+          <td class="text-center">
+            <button class="btn btn-sm btn-primary" routerLink="/admin/patient/ajoutOrdo/{{etat.Patient}}">Ajouter Ordonnance</button>
+            <button class="btn btn-sm btn-primary" routerLink="/admin/patient/ajoutRap/{{etat.Patient}}">Ajouter rapport</button>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>

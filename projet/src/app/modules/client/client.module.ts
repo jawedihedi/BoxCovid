@@ -24,10 +24,12 @@ import { ToastModule } from 'primeng/toast';
 import { UserService } from '../admin/services/user.service';
 import { AuthService } from '../auth/auth.service';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { EtatComponent } from './etat/etat.component';
+import { OrdonnanceComponent } from './ordonnance/ordonnance.component';
 
 
 @NgModule({
-  declarations: [ NavbarComponent, SliderComponent, HomeComponent, FooterComponent, ProfilComponent, AboutUsComponent],
+  declarations: [ NavbarComponent, SliderComponent, HomeComponent, FooterComponent, ProfilComponent, AboutUsComponent, EtatComponent, OrdonnanceComponent],
   imports: [
     CommonModule,
     BrowserModule,

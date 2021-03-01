@@ -1,6 +1,7 @@
+import { CreateRapportComponent } from './components/create-rapport/create-rapport.component';
+import { CreateOrdannaceComponent } from './components/create-ordannace/create-ordannace.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CrudUsersComponent } from './components/crud-users/crud-users.component';
 import { ListUsersComponent } from './components/list-users/list-users.component';
 import {RadioButtonModule} from 'primeng/radiobutton';
 import { AdminRoutingModule } from './admin-routing.module';
@@ -29,6 +30,10 @@ import {ToggleButtonModule} from 'primeng/togglebutton';
 import {ChartModule} from 'primeng/chart';
 import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { RegistreMedComponent } from './components/registre-med/registre-med.component';
+import { RegistrePatientComponent } from './components/registre-patient/registre-patient.component';
+import { ListePatientComponent } from './components/liste-patient/liste-patient.component';
+import { ProfilePatientComponent } from './components/profile-patient/profile-patient.component';
 
 export function getToken() {
   return localStorage.getItem('token');
@@ -41,7 +46,7 @@ const JWT_Module_Options: JwtModuleOptions = {
 
 
 @NgModule({
-  declarations: [CrudUsersComponent, ListUsersComponent, HomeComponent, NavbarComponent],
+  declarations: [ListUsersComponent, HomeComponent, NavbarComponent, RegistreMedComponent, RegistrePatientComponent, ListePatientComponent, ProfilePatientComponent, CreateOrdannaceComponent, CreateRapportComponent],
   imports: [
     CommonModule,
     BrowserAnimationsModule,
