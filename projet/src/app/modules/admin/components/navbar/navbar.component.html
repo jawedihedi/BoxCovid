@@ -1,4 +1,38 @@
 <div class="container-fluid">
+  <main class="main-content col-lg-10 col-md-9 col-sm-12 p-0 offset-lg-2 offset-md-3"></main>
+      <div class="main-navbar sticky-top bg-white">
+        <!-- Main Navbar -->
+        <nav class="navbar align-items-stretch navbar-light flex-md-nowrap p-0">
+
+              <p class="navbar-search form-control"   aria-label="Search" name="search"  ></p>
+
+          <ul class="navbar-nav border-left flex-row ">
+
+            <li class="nav-item border-right dropdown">
+              <a class="nav-link dropdown-toggle text-nowrap px-3" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                <img class="user-avatar rounded-circle mr-2" src=".\assets\admin\images\avatars\0.jpg" alt="User Avatar">
+                <span class="d-none d-md-inline-block">Admin</span>
+              </a>
+              <div class="dropdown-menu dropdown-menu-small">
+                <a class="dropdown-item" href="user-profile-lite.html" routerLink="/admin/profileadmin">
+                  <i class="material-icons">&#xE7FD;</i> Profil</a>
+
+                    <a class="dropdown-item" href="http://localhost:4200/home">
+                      <i class="material-icons">home</i> Accueil</a>
+
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item text-danger"  (click)="logout()">
+                  <i class="material-icons text-danger">&#xE879;</i> Se déconnecter </a>
+              </div>
+            </li>
+          </ul>
+          <nav class="nav">
+            <a href="#" class="nav-link nav-link-icon toggle-sidebar d-md-inline d-lg-none text-center border-left" data-toggle="collapse" data-target=".header-navbar" aria-expanded="false" aria-controls="header-navbar">
+              <i class="material-icons">&#xE5D2;</i>
+            </a>
+          </nav>
+        </nav>
+      </div>
   <div class="row">
     <!-- Main Sidebar -->
     <aside class="main-sidebar col-12 col-md-3 col-lg-2 px-0">
@@ -47,38 +81,5 @@
       </div>
     </aside>
     <!-- End Main Sidebar -->
-    <main class="main-content col-lg-10 col-md-9 col-sm-12 p-0 offset-lg-2 offset-md-3">
-      <div class="main-navbar sticky-top bg-white">
-        <!-- Main Navbar -->
-        <nav class="navbar align-items-stretch navbar-light flex-md-nowrap p-0">
 
-              <p class="navbar-search form-control"   aria-label="Search" name="search"  ></p>
-
-          <ul class="navbar-nav border-left flex-row ">
-
-            <li class="nav-item border-right dropdown">
-              <a class="nav-link dropdown-toggle text-nowrap px-3" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                <img class="user-avatar rounded-circle mr-2" src=".\assets\admin\images\avatars\0.jpg" alt="User Avatar">
-                <span class="d-none d-md-inline-block">Admin</span>
-              </a>
-              <div class="dropdown-menu dropdown-menu-small">
-                <a class="dropdown-item" href="user-profile-lite.html" routerLink="/admin/profileadmin">
-                  <i class="material-icons">&#xE7FD;</i> Profil</a>
-
-                    <a class="dropdown-item" href="http://localhost:4200/home">
-                      <i class="material-icons">home</i> Accueil</a>
-
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item text-danger"  (click)="logout()">
-                  <i class="material-icons text-danger">&#xE879;</i> Se déconnecter </a>
-              </div>
-            </li>
-          </ul>
-          <nav class="nav">
-            <a href="#" class="nav-link nav-link-icon toggle-sidebar d-md-inline d-lg-none text-center border-left" data-toggle="collapse" data-target=".header-navbar" aria-expanded="false" aria-controls="header-navbar">
-              <i class="material-icons">&#xE5D2;</i>
-            </a>
-          </nav>
-        </nav>
-      </div>
 <router-outlet></router-outlet>

@@ -52,8 +52,6 @@ export class RegisterComponent implements OnInit {
     prenom: '',
     tel: 0,
     age: 0,
-    Niveau : '',
-    etude: ''
   }
     this.auth.registerUser(registerUserData)
     .subscribe(

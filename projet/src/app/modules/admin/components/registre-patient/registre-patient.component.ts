@@ -18,8 +18,13 @@ export class RegistrePatientComponent implements OnInit {
     private patientService: PatientService
   ) {
     this.userForm = this.formBuilder.group({
+      nom: [''],
+      prenom: [''],
+      age: [''],
+      tel: [''],
       email: [''],
       password: ['']
+
     })
   }
 

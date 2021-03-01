@@ -7,8 +7,6 @@ export class User {
     role: string;
     tel: number;
     age: number;
-    Niveau : string;
-    etude: string;
-    
+
     token?: string;
 }

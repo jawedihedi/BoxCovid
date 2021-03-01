@@ -1,30 +1,35 @@
 <br>
-<div class="col-lg-8">
+<div class="container d-flex justify-content-center">
   <div class="card card-small mb-4">
     <div class="card-header border-bottom">
-      <h6 class="m-0">Ajouter un évènement</h6>
+      <h4 class="m-0">Liste des patients</h4>
     </div>
-  <div class="table-responsive">
+  <div class="table-responsive" style="margin: 0 auto;">
     <table class="table table-bordered">
-      <thead>
+      <thead class="thead-dark">
         <tr>
-          <th scope="col">Id</th>
-          <th scope="col">email</th>
-          <th scope="col">Password</th>
+          <th scope="col">Nom</th>
+          <th scope="col">Prénom</th>
+          <th scope="col">Age</th>
+          <th scope="col">N° Téléphone</th>
+          <th scope="col">E-mail</th>
           <th class="text-center" scope="col">Action</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let user of Users; let i = index">
-          <th scope="row">{{user._id}}</th>
+          <td>{{user.nom}}</td>
+          <td>{{user.prenom}}</td>
+          <td>{{user.age}}</td>
+          <td>{{user.tel}}</td>
           <td>{{user.email}}</td>
-          <td>{{user.password}}</td>
           <td class="text-center">
-            <button class="btn btn-sm btn-primary" routerLink="/admin/patient/etats/{{user._id}}">consulter etat</button>
-            <button class="btn btn-sm btn-danger" (click)="delete(book._id, i)">Delete</button>
+            <button class="btn btn-sm btn-primary" routerLink="/admin/patient/etats/{{user._id}}">Consulter son état</button>
+            <button class="btn btn-sm btn-danger" (click)="delete(book._id, i)">Supprimer</button>
         </tr>
       </tbody>
     </table>
   </div>
 </div>
 </div>
+
